@@ -1,5 +1,6 @@
-package com.springboot.aws.springboot_webservice_aws.domain.posts;
+package com.springboot.aws.springboot_webservice_aws.repository;
 
+import com.springboot.aws.springboot_webservice_aws.domain.posts.Posts;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

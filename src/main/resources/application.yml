@@ -6,10 +6,18 @@ server:
 spring:
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: create
 
   h2:
     console:
       enabled: true
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/aws
+    username: kslee
+    password: 9156
+    driver-class-name: org.h2.Driver
 
   profiles:
     include: oauth

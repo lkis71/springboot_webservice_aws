@@ -2,8 +2,6 @@ package com.springboot.aws.springboot_webservice_aws.web.dto;
 
 import com.springboot.aws.springboot_webservice_aws.domain.posts.Posts;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Getter
 public class PostsResponseDto {

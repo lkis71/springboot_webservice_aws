@@ -1,5 +1,6 @@
 package com.springboot.aws.springboot_webservice_aws.domain.posts;
 
+import com.springboot.aws.springboot_webservice_aws.repository.PostsRepository;
 import org.junit.After;
 
 import org.junit.Test;
