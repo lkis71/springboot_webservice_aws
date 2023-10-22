@@ -1,5 +1,6 @@
 package com.springboot.aws.springboot_webservice_aws.web;
 
+import com.springboot.aws.springboot_webservice_aws.config.auth.LoginUser;
 import com.springboot.aws.springboot_webservice_aws.config.auth.dto.SessionUser;
 import com.springboot.aws.springboot_webservice_aws.service.PostsService;
 import com.springboot.aws.springboot_webservice_aws.web.dto.PostsResponseDto;
@@ -9,19 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import javax.servlet.http.HttpSession;
-
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession session;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
-        SessionUser user = (SessionUser) session.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
